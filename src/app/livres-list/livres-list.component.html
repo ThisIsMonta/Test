@@ -1,0 +1,11 @@
+<h1>Liste des livres</h1>
+<ng-template >
+    <ul *ngFor="let livre of livres">
+        <li><img [src]="{{livre.couverture}}"></li>
+        <li>{{livre.titre}}</li>
+        <li>{{livre.prix}}</li>
+        <li>{{livre.dateEdition||date:"MMMM - yyyy"}}</li>
+        <li>Donnez un % de promotion : <input type="number" [(ngModel)]="promotion" min="0" max="1">{{promotion*livre.prix}}</li>
+    </ul>
+</ng-template>
+
